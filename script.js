@@ -252,11 +252,17 @@ document.querySelectorAll('.project-card, .news-card').forEach(card => {
         return;
     }
 
+    // Reveal the video only once real frames are rendering, so nothing
+    // flashes in the hero while it loads.
+    const reveal = () => video.classList.add('is-playing');
+    video.addEventListener('playing', reveal, { once: true });
+    if (!video.paused && video.readyState >= 3) reveal();
+
     // Some browsers reject autoplay until the element is explicitly played.
     const tryPlay = () => {
         const attempt = video.play();
         if (attempt && typeof attempt.catch === 'function') {
-            attempt.catch(() => { /* poster image remains visible */ });
+            attempt.catch(() => { /* dark hero background remains visible */ });
         }
     };
     tryPlay();

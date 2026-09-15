@@ -468,6 +468,12 @@ ul {
     object-fit: cover;
     z-index: 0;
     filter: saturate(1.05) contrast(1.05);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.hero-video.is-playing {
+    opacity: 1;
 }
 
 /* Legibility scrim: darkens the centre, deepens the edges, and fades
