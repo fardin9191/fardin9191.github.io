@@ -1,0 +1,127 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emitter on Chip (PIC Study) | Research | Md Fardin Ahmed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">MFA<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research &amp; Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <a href="research-quantum-emitter.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Quantum Emitter</a>
+            <span class="section-num">RESEARCH</span>
+            <h1>Putting the Emitter on a Chip</h1>
+            <svg class="g2-dip" viewBox="0 0 120 24" width="120" height="24" aria-hidden="true">
+                <path class="g2-line" d="M0,12 H42 M78,12 H120"></path>
+                <path class="g2-curve" d="M42,12 C50,12 50,22 60,22 C70,22 70,12 78,12"></path>
+            </svg>
+            <p class="page-sub">A photonic integrated circuit design study for my p-GaN single-photon emitters, built in Lumerical at 768 nm.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container research-detail">
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-bullseye"></i> What I wanted to achieve</h2>
+                    <p>My M.Sc. work characterizes room-temperature single-photon emitters in p-type GaN on an optical table, using a confocal microscope and a Hanbury Brown and Twiss (HBT) interferometer I built and automated myself. That setup works, but it is large, alignment sensitive, and it loses light at every lens and every fiber.</p>
+                    <p>Photonic integrated circuits are where my own interest has been pulling me for a while. A free-space table can prove that an emitter is quantum; it cannot be scaled. To turn a single good emitter into real quantum hardware, the emitter, the waveguides, the splitters, and the detectors have to live on the same chip. That is the only honest path to scalability, so I taught myself the design tools and took the first step on my own initiative.</p>
+                    <p>The target was concrete: design the front end of an <em>on-chip</em> HBT measurement. An emitter sitting inside a GaN waveguide, the waveguide carrying its photons to a 50:50 splitter, and the splitter feeding two outputs, all designed at 768 nm, the emission wavelength of one of my own MBE-grown p-GaN emitters.</p>
+                </div>
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-ruler-horizontal"></i> Single mode waveguide</h2>
+                    <p>A photonic circuit starts with its waveguide. I wanted the widest GaN ridge that still guides a single mode of each polarization, because a single-mode guide sends every captured photon into one well-defined path. I modeled a 500 nm tall GaN ridge on sapphire and swept its width with the eigenmode solver. The ridge stays single-mode up to 330 nm, so I chose <strong>300 nm</strong>, which keeps the light tightly confined and leaves room for fabrication error.</p>
+                    <figure class="block-figure">
+                        <img src="photos/Research/QE/PIC/waveguide-modes.png" alt="Lumerical MODE waveguide model and mode profiles for a GaN ridge on sapphire" loading="lazy">
+                        <figcaption><strong>Figure 1.</strong> (a) The waveguide model in Lumerical MODE: a GaN ridge (red) on a sapphire substrate, with the solver cross-section and mesh region. (b) The fundamental mode of a first test ridge, 0.8 µm wide, which is too wide and guides several modes. (c) The fundamental mode of the final 300 nm by 500 nm ridge, with the light tightly confined inside the GaN.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-arrows-to-dot"></i> How much light the waveguide captures</h2>
+                    <p>A waveguide is only useful if the emitter's light actually enters it. I placed a dipole source inside the ridge to represent the emitter and ran full 3D FDTD simulations, then extracted the &beta; factor, the fraction of emitted photons captured by the guided mode, and the Purcell factor, which says how much the waveguide changes the emission rate. Every result was checked against a finer mesh and moved by less than 1%.</p>
+                    <figure class="block-figure">
+                        <img src="photos/Research/QE/PIC/coupling-beta-purcell.png" alt="Mode count versus ridge width, Purcell factor spectrum, and beta factor versus emitter depth" loading="lazy">
+                        <figcaption><strong>Figure 2.</strong> Left: number of guided TE-like and TM-like modes versus ridge width at 750 nm; the shaded region is single-mode and the dotted line marks the chosen 300 nm width. Middle: Purcell factor versus wavelength for a lateral dipole at the ridge center, with the star marking the fine-mesh check at 768 nm. Right: &beta; factor at 768 nm versus emitter depth for three dipole orientations and their average; the dashed line marks the measured depth of my emitters, 400 nm below the surface.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-code-branch"></i> The on-chip beam splitter</h2>
+                    <p>The heart of an HBT measurement is a 50:50 beam splitter. On a chip that role is played by a multimode interference (MMI) splitter, a short wide section of waveguide where several modes interfere and re-form two copies of the input light. I designed it for the TE-like mode, which matches the in-plane emission I see in my polarization measurements. From the mode analysis, the first 50:50 self-image forms at a length of <strong>5.88 µm</strong>, and the mode spacings follow the ideal self-imaging pattern almost exactly, with only a small phase error in the highest mode.</p>
+                    <figure class="block-figure">
+                        <img src="photos/Research/QE/PIC/mmi-splitter.png" alt="1x2 MMI splitter model, mode spacing against the self-imaging condition, and the first four TE-like modes" loading="lazy">
+                        <figcaption><strong>Figure 3.</strong> (a) The 1&times;2 MMI splitter model: 300 nm input and output waveguides joined by a 2.0 µm wide GaN section. (b) Spacing between the modes of the wide section compared with the ideal self-imaging condition; the close match means the two output images should form cleanly. (c) The first four TE-like modes of the wide section at 768 nm.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-square-poll-vertical"></i> What I got</h2>
+                    <ul class="result-list">
+                        <li>A single-mode GaN-on-sapphire waveguide at the emitter wavelength: a 300 nm by 500 nm ridge, single-mode up to 330 nm.</li>
+                        <li>A vertically oriented emitter at the center of the ridge sends up to <strong>50%</strong> of its photons into the waveguide; a sideways emitter reaches <strong>39%</strong>.</li>
+                        <li>At the depth where my real emitters sit, 400 nm below the surface, the waveguide still captures <strong>26% to 31%</strong> of the light depending on orientation.</li>
+                        <li>The emission rate barely changes, so the waveguide collects the light without distorting the emitter's photophysics.</li>
+                        <li>The chip layout has to follow the emitter's polarization: a waveguide running along the dipole axis captures almost nothing.</li>
+                        <li>A 1&times;2 MMI splitter designed from mode analysis, with the first 50:50 image at <strong>5.88 µm</strong>.</li>
+                    </ul>
+                    <!-- <table class="status-table">
+                        <tbody>
+                        <tr><th>Design milestone</th><th>Status</th></tr>
+                        <tr><td>Single-mode waveguide at the emitter wavelength</td><td>Done</td></tr>
+                        <tr><td>Emitter coupling calculated (&beta; up to 0.50)</td><td>Done</td></tr>
+                        <tr><td>Splitter designed from mode analysis (5.88 µm)</td><td>Done</td></tr>
+                        <tr><td>Splitter confirmed by full propagation simulation</td><td>In progress</td></tr>
+                        <tr><td>Circuit model of the complete HBT front end</td><td>Planned</td></tr>
+                        </tbody>
+                    </table> -->
+                </div>
+
+                <div class="research-block glass-card reveal">
+                    <h2><i class="fas fa-forward"></i> Next steps</h2>
+                    <p>Confirm the 5.88 µm splitter with eigenmode expansion and independent 3D FDTD runs, tune its length across the full 740 to 800 nm emission band, then connect all the parts in Lumerical INTERCONNECT on top of the real GaN layer stack.</p>
+                    <p class="proj-venue">Reference: L. B. Soldano and E. C. M. Pennings, J. Lightwave Technol. 13, 615 (1995).</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Md Fardin Ahmed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+    <script src="script.js"></script>
+</body></html>

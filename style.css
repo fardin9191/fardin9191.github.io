@@ -2986,3 +2986,138 @@ main > .section:first-of-type .section-header {
         transition: none;
     }
 }
+
+/* =========================================
+   Sub-page "next" link card + figure prose
+   ========================================= */
+.next-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: stretch;
+    overflow: hidden;
+    color: inherit;
+    margin-bottom: 1.5rem;
+}
+
+.next-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.next-card-visual {
+    position: relative;
+    min-height: 200px;
+    border-right: 1px solid var(--border);
+    background: var(--bg-1);
+}
+
+.next-card-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.next-card-body {
+    padding: 1.6rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.next-card-body h3 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.next-card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.next-card-cta {
+    margin-top: auto;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.next-card:hover .next-card-cta {
+    color: var(--accent-2);
+}
+
+/* Full-width figures inside a research block */
+.research-block p + p {
+    margin-top: 1rem;
+}
+
+.block-figure {
+    margin: 1.6rem 0 0.5rem;
+}
+
+.block-figure img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    background: #fff;
+}
+
+.block-figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.block-figure figcaption strong {
+    color: var(--text-primary);
+}
+
+.result-list li {
+    list-style: disc;
+    margin-left: 1.2rem;
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.status-table th,
+.status-table td {
+    text-align: left;
+    padding: 0.7rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.status-table th {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.status-table td:last-child {
+    white-space: nowrap;
+    color: var(--accent-2);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .next-card {
+        grid-template-columns: 1fr;
+    }
+
+    .next-card-visual {
+        min-height: 180px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+}
