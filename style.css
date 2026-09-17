@@ -469,7 +469,7 @@ ul {
     z-index: 0;
     filter: saturate(1.05) contrast(1.05);
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.35s ease;
 }
 
 .hero-video.is-playing {
