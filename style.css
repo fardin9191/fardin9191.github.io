@@ -467,11 +467,16 @@ ul {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 0;
-    filter: saturate(1.05) contrast(1.05);
-    opacity: 0;
+    /* The saturate/contrast grade is baked into the file at encode time.
+       As a CSS filter it cost a GPU pass on every frame, which stuttered
+       the hero on low-end devices. */
+    /* Visible immediately: the poster is frame 0 of this same video, so
+       there is nothing to flash and no reason to gate the hero on JS. */
+    opacity: 1;
     transition: opacity 0.35s ease;
 }
 
+/* Kept so the fade can be reinstated; redundant while the poster is in place. */
 .hero-video.is-playing {
     opacity: 1;
 }

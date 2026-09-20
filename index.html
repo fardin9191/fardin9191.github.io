@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-subset.css?v=20260920">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=20260917">
+    <link rel="stylesheet" href="style.css?v=20260920">
 </head>
 <body class="has-video-hero">
     <div id="scroll-progress" aria-hidden="true"></div>
@@ -39,8 +39,9 @@
 
     <!-- Hero Section — cinematic video background -->
     <header id="home" class="hero">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-            <source src="video/Extreme_macro_cinematography_2.mp4" type="video/mp4">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+               poster="video/hero-poster.jpg" width="1280" height="720" aria-hidden="true">
+            <source src="video/Extreme_macro_cinematography_2.mp4?v=20260920" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-grain" aria-hidden="true"></div>
@@ -144,7 +145,7 @@
             <div class="about-content reveal">
                 <div class="about-image">
                     <div class="about-image-wrapper">
-                        <img src="images/Headshot_FardinAhmed_v2.jpg" alt="Md Fardin Ahmed" loading="lazy" decoding="async">
+                        <img src="images/Headshot_FardinAhmed_v2.jpg" alt="Md Fardin Ahmed" width="750" height="678" loading="lazy" decoding="async">
                         <div class="laser-frame"></div>
                     </div>
                 </div>

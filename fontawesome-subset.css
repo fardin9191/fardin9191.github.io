@@ -1,0 +1,62 @@
+/* FontAwesome 6.7.2 — self-hosted subset of the 55 icons this site uses.
+   Rebuild: see the note in the commit. Upstream: https://fontawesome.com (CC BY 4.0 icons, SIL OFL 1.1 fonts, MIT code) */
+.fa,.fas,.fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
+.fab{font-family:"Font Awesome 6 Brands";font-weight:400}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(fonts/fa-subset-solid.woff) format("woff")}
+.fa-arrow-left::before{content:"\f060"}
+.fa-arrow-right::before{content:"\f061"}
+.fa-arrows-to-dot::before{content:"\e4be"}
+.fa-atom::before{content:"\f5d2"}
+.fa-bolt::before{content:"\f0e7"}
+.fa-book-open::before{content:"\f518"}
+.fa-brain::before{content:"\f5dc"}
+.fa-bullseye::before{content:"\f140"}
+.fa-cash-register::before{content:"\f788"}
+.fa-certificate::before{content:"\f0a3"}
+.fa-chalkboard-user::before{content:"\f51c"}
+.fa-chart-line::before{content:"\f201"}
+.fa-chevron-down::before{content:"\f078"}
+.fa-chevron-up::before{content:"\f077"}
+.fa-code::before{content:"\f121"}
+.fa-code-branch::before{content:"\f126"}
+.fa-cube::before{content:"\f1b2"}
+.fa-cubes-stacked::before{content:"\e4e6"}
+.fa-diagram-project::before{content:"\f542"}
+.fa-download::before{content:"\f019"}
+.fa-egg::before{content:"\f7fb"}
+.fa-envelope::before{content:"\f0e0"}
+.fa-external-link-alt::before{content:"\f35d"}
+.fa-file-lines::before{content:"\f15c"}
+.fa-forward::before{content:"\f04e"}
+.fa-gauge-high::before{content:"\f625"}
+.fa-globe-asia::before{content:"\f57e"}
+.fa-graduation-cap::before{content:"\f19d"}
+.fa-hand-holding-dollar::before{content:"\f4c0"}
+.fa-hand-paper::before{content:"\f256"}
+.fa-helicopter::before{content:"\f533"}
+.fa-images::before{content:"\f302"}
+.fa-layer-group::before{content:"\f5fd"}
+.fa-lightbulb::before{content:"\f0eb"}
+.fa-map-marker-alt::before{content:"\f3c5"}
+.fa-medal::before{content:"\f5a2"}
+.fa-microchip::before{content:"\f2db"}
+.fa-microphone-lines::before{content:"\f3c9"}
+.fa-microscope::before{content:"\f610"}
+.fa-network-wired::before{content:"\f6ff"}
+.fa-newspaper::before{content:"\f1ea"}
+.fa-person-chalkboard::before{content:"\e53d"}
+.fa-robot::before{content:"\f544"}
+.fa-ruler-horizontal::before{content:"\f547"}
+.fa-shield-halved::before{content:"\f3ed"}
+.fa-square-poll-vertical::before{content:"\f681"}
+.fa-square-root-variable::before{content:"\f698"}
+.fa-sun::before{content:"\f185"}
+.fa-trophy::before{content:"\f091"}
+.fa-users::before{content:"\f0c0"}
+.fa-wave-square::before{content:"\f83e"}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(fonts/fa-subset-brands.woff) format("woff")}
+.fa-github::before{content:"\f09b"}
+.fa-google-scholar::before{content:"\e63b"}
+.fa-linkedin-in::before{content:"\f0e1"}
+.fa-youtube::before{content:"\f167"}
